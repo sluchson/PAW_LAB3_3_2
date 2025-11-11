@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stacje NOAA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Stacje pogodowe NOAA</h1>
+
+  <div class="controls">
+    <button id="fetchButton">Pobierz stacje</button>
+  </div>
+
+  <div id="errorMessages" class="errorMessage"></div>
+
+  <table id="resultsTable">
+    <thead>
+      <tr>
+        <th>Station ID</th>
+        <th>Name</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+      </tr>
+    </thead>
+    <tbody id="resultsBody">
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
