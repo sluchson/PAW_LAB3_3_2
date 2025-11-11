@@ -15,6 +15,7 @@
     <select id="viewSelector">
       <option value="stations" selected>Stacje (Com3_2.1)</option>
       <option value="datasets">Zbiory Danych (Com3_2.2)</option>
+      <option value="data">Dane (Com3_2.3)</option>
     </select>
   </div>
 
@@ -55,6 +56,43 @@
         </tr>
       </thead>
       <tbody id="datasetsResultsBody">
+      </tbody>
+    </table>
+  </div>
+
+  <div id="dataView" style="display: none;">
+    <h1>Pobierz dane (z parametrami)</h1>
+
+    <form id="dataForm">
+      <div class="form-group">
+        <label for="datasetInput">Dataset ID:</label>
+        <input type="text" id="datasetInput" value="GHCND">
+      </div>
+      <div class="form-group">
+        <label for="locationInput">Location ID:</label>
+        <input type="text" id="locationInput" value="ZIP:28801">
+      </div>
+      <div class="form-group">
+        <label for="startDateInput">Start Date (YYYY-MM-DD):</label>
+        <input type="date" id="startDateInput" value="2010-05-01">
+      </div>
+      <div class="form-group">
+        <label for="endDateInput">End Date (YYYY-MM-DD):</label>
+        <input type="date" id="endDateInput" value="2010-05-01">
+      </div>
+      <button type="submit">Pobierz dane</button>
+    </form>
+
+    <div id="dataErrorMessages" class="errorMessage"></div>
+    <table id="dataResultsTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Data Type</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody id="dataResultsBody">
       </tbody>
     </table>
   </div>

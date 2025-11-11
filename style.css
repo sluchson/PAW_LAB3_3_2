@@ -11,13 +11,11 @@ body {
   margin-bottom: 20px;
   text-align: center;
 }
-
 .view-selector-container label {
   font-size: 18px;
   margin-right: 10px;
   font-weight: bold;
 }
-
 select {
   padding: 8px;
   font-size: 16px;
@@ -27,7 +25,8 @@ select {
 }
 
 #stationsView,
-#datasetsView {
+#datasetsView,
+#dataView {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -47,9 +46,40 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #003e6b;
+}
+
+#dataForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="date"] {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#dataForm button {
+  height: 37px; /* Dopasowanie wysokości przycisku */
 }
 
 .errorMessage {
@@ -63,7 +93,8 @@ button:hover {
 }
 
 #stationsResultsTable,
-#datasetsResultsTable {
+#datasetsResultsTable,
+#dataResultsTable {
   width: 90%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -74,14 +105,17 @@ button:hover {
 #stationsResultsTable th,
 #stationsResultsTable td,
 #datasetsResultsTable th,
-#datasetsResultsTable td {
+#datasetsResultsTable td,
+#dataResultsTable th,
+#dataResultsTable td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
 
 #stationsResultsTable th,
-#datasetsResultsTable th {
+#datasetsResultsTable th,
+#dataResultsTable th {
   background-color: #f2f2f2;
 }
 
