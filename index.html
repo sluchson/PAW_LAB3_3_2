@@ -4,31 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stacje NOAA</title>
+  <title>Dane NOAA</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>Stacje pogodowe NOAA</h1>
 
-  <div class="controls">
-    <button id="fetchButton">Pobierz stacje</button>
+  <div class="view-selector-container">
+    <label for="viewSelector">Wybierz widok:</label>
+    <select id="viewSelector">
+      <option value="stations" selected>Stacje (Com3_2.1)</option>
+      <option value="datasets">Zbiory Danych (Com3_2.2)</option>
+    </select>
   </div>
 
-  <div id="errorMessages" class="errorMessage"></div>
+  <div id="stationsView" style="display: flex;">
+    <h1>Stacje pogodowe NOAA</h1>
+    <div class="controls">
+      <button id="fetchStationsButton">Pobierz stacje</button>
+    </div>
+    <div id="stationsErrorMessages" class="errorMessage"></div>
+    <table id="stationsResultsTable">
+      <thead>
+        <tr>
+          <th>Station ID</th>
+          <th>Name</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+        </tr>
+      </thead>
+      <tbody id="stationsResultsBody">
+      </tbody>
+    </table>
+  </div>
 
-  <table id="resultsTable">
-    <thead>
-      <tr>
-        <th>Station ID</th>
-        <th>Name</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-      </tr>
-    </thead>
-    <tbody id="resultsBody">
-    </tbody>
-  </table>
+  <div id="datasetsView" style="display: none;">
+    <h1>Zbiory Danych NOAA</h1>
+    <div class="controls">
+      <button id="fetchDatasetsButton">Pobierz zbiory</button>
+    </div>
+    <div id="datasetsErrorMessages" class="errorMessage"></div>
+    <table id="datasetsResultsTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Min. Date</th>
+          <th>Max. Date</th>
+        </tr>
+      </thead>
+      <tbody id="datasetsResultsBody">
+      </tbody>
+    </table>
+  </div>
 
   <script src="script.js"></script>
 </body>
